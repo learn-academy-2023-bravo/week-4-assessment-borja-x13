@@ -44,14 +44,18 @@ const colors2 = [
 // Using jest test template to test a function "chaosArray"
 // it "takes an array as an argument, removes the first item returns the rest of the array shuffled"
 // expect(chaosArray(colors1)).toEqual(expect.arrayContaining(["yellow", "blue", "pink", "green"]))
+// expect(chaosArray(colors1)).not.toEqual(expect.arrayContaining(["purple"]))
 // expect(chaosArray(colors2)).toEqual(expect.arrayContaining(["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]))
+// expect(chaosArray(colors2)).not.toEqual(expect.arrayContaining(["chartreuse"]))
 // input: since there isn't a function to test, there is no input and I expect a fail (red)
 // output: should output a ReferenceError: chaosArray is not defined
 
 describe ("chaosArray", () => {
   it("takes an array as an argument, removes the first item returns the rest of the array shuffled", () => {
     expect(chaosArray(colors1)).toEqual(expect.arrayContaining(["yellow", "blue", "pink", "green"]))
+    expect(chaosArray(colors1)).not.toEqual(expect.arrayContaining(["purple"]))
     expect(chaosArray(colors2)).toEqual(expect.arrayContaining(["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]))
+    expect(chaosArray(colors2)).not.toEqual(expect.arrayContaining(["chartreuse"]))
     })
   })
 
